@@ -22,4 +22,9 @@ public class ExampleController {
     public Greeting greet(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
+    
+     @RequestMapping("/")
+    String home() {
+        return "Hello World from custom source!";
+    }
 }
